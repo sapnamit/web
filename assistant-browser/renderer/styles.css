@@ -1,0 +1,19 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+.titlebar { display: flex; gap: 8px; align-items: center; padding: 8px; border-bottom: 1px solid #e5e7eb; background: #f9fafb; }
+.titlebar .controls button { padding: 4px 8px; }
+.titlebar input#url { flex: 1; padding: 6px 10px; border: 1px solid #d1d5db; border-radius: 6px; }
+.container { display: grid; grid-template-columns: 360px 1fr; height: calc(100% - 49px); }
+.sidebar { border-right: 1px solid #e5e7eb; display: flex; flex-direction: column; }
+.assistant-header { padding: 12px; font-weight: 600; border-bottom: 1px solid #e5e7eb; }
+.assistant-output { flex: 1; padding: 12px; overflow: auto; }
+.assistant-input { padding: 12px; display: flex; gap: 8px; border-top: 1px solid #e5e7eb; }
+.assistant-input textarea { flex: 1; min-height: 60px; resize: vertical; padding: 8px; border: 1px solid #d1d5db; border-radius: 6px; }
+.assistant-input button { padding: 8px 12px; }
+.quick-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px; border-top: 1px solid #e5e7eb; }
+.webview-container { height: 100%; }
+webview { width: 100%; height: 100%; }
+.message { margin-bottom: 12px; }
+.message.user { color: #111827; }
+.message.assistant { color: #374151; }
+.message .role { font-weight: 600; margin-right: 6px; }

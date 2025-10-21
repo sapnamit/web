@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; frame-src *; connect-src 'self' https: http:;" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Assistant Browser</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="titlebar">
+      <div class="controls">
+        <button id="back">⟵</button>
+        <button id="forward">⟶</button>
+        <button id="reload">⟳</button>
+      </div>
+      <input id="url" type="text" placeholder="Enter URL (e.g. https://www.macys.com)" />
+      <button id="go">Go</button>
+    </div>
+
+    <div class="container">
+      <aside class="sidebar">
+        <div class="assistant-header">Assistant</div>
+        <div id="assistant-output" class="assistant-output"></div>
+        <div class="assistant-input">
+          <textarea id="assistant-input" placeholder="Ask about products, coupons, or travel..."></textarea>
+          <button id="assistant-send">Send</button>
+        </div>
+        <div class="quick-actions">
+          <button data-action="summarize">Summarize this page</button>
+          <button data-action="coupons">Find coupons</button>
+          <button data-action="deals">List top deals</button>
+          <button data-action="itinerary">Make a trip plan</button>
+        </div>
+      </aside>
+
+      <main class="webview-container">
+        <webview id="webview" src="https://www.macys.com" partition="persist:default" allowpopups></webview>
+      </main>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>

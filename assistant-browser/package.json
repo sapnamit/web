@@ -1,0 +1,26 @@
+{
+  "name": "assistant-browser",
+  "version": "1.0.0",
+  "description": "Open-source Electron browser with AI assistant sidebar for products, coupons, and travel",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron ."
+  },
+  "keywords": [
+    "electron",
+    "browser",
+    "assistant",
+    "ollama",
+    "openai"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "electron": "^28.3.3"
+  }
+}
