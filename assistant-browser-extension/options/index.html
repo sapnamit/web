@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Assistant Options</title>
+    <style>
+      body{ margin:0; font: 14px system-ui; background:#0b0b0c; color:#eaeaea; }
+      main{ padding:16px; max-width:720px; margin:0 auto; display:flex; flex-direction:column; gap:12px; }
+      fieldset{ border:1px solid #333; border-radius:10px; padding:12px; }
+      label{ display:block; margin-bottom:6px; opacity:0.9; }
+      input,select{ width:100%; padding:10px; border-radius:8px; border:1px solid #3a3a3e; background:#0e0e10; color:#eaeaea; }
+      .row{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+      button{ padding:10px 12px; border-radius:10px; border:1px solid #3a3a3e; background:#1a1a1f; color:#eaeaea; cursor:pointer; width:max-content; }
+      .hint{ opacity:0.8; font-size:12px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Assistant Options</h1>
+
+      <fieldset>
+        <legend>Provider</legend>
+        <label>Provider</label>
+        <select id="provider">
+          <option value="ollama">Ollama (local)</option>
+        </select>
+        <div class="row">
+          <div>
+            <label>Endpoint</label>
+            <input id="endpoint" placeholder="http://localhost:11434" />
+          </div>
+          <div>
+            <label>Model</label>
+            <input id="model" placeholder="llama3.1:8b" />
+          </div>
+        </div>
+        <p class="hint">Run Ollama locally and pull a model, e.g., `ollama run llama3.1`.</p>
+      </fieldset>
+
+      <button id="save">Save</button>
+      <span id="status" class="hint"></span>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
