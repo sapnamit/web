@@ -1,0 +1,26 @@
+{
+  "name": "smart-assistant-browser",
+  "version": "1.0.0",
+  "description": "An open-source browser with AI assistant sidebar for shopping, travel, and deals",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "keywords": [
+    "browser",
+    "electron",
+    "ai-assistant",
+    "shopping",
+    "travel"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^27.0.0",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "electron": "^27.0.0"
+  }
+}

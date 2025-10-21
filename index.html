@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Assistant Browser</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="browser-container">
+        <!-- Navigation Bar -->
+        <div class="navbar">
+            <div class="nav-controls">
+                <button id="back-btn" class="nav-btn" title="Back">◀</button>
+                <button id="forward-btn" class="nav-btn" title="Forward">▶</button>
+                <button id="refresh-btn" class="nav-btn" title="Refresh">⟳</button>
+            </div>
+            <div class="url-bar-container">
+                <input type="text" id="url-bar" placeholder="Enter URL or search..." value="https://www.google.com">
+                <button id="go-btn" class="go-btn">Go</button>
+            </div>
+            <div class="browser-actions">
+                <button id="toggle-assistant-btn" class="action-btn">🤖 Assistant</button>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="content-area">
+            <!-- Browser View -->
+            <div class="browser-view" id="browser-view">
+                <webview id="webview" 
+                         src="https://www.google.com" 
+                         allowpopups
+                         partition="persist:main"></webview>
+            </div>
+
+            <!-- Assistant Sidebar -->
+            <div class="assistant-sidebar" id="assistant-sidebar">
+                <div class="assistant-header">
+                    <h3>🤖 Smart Assistant</h3>
+                    <button id="close-assistant" class="close-btn">✕</button>
+                </div>
+                
+                <div class="assistant-tabs">
+                    <button class="tab-btn active" data-tab="chat">Chat</button>
+                    <button class="tab-btn" data-tab="insights">Insights</button>
+                    <button class="tab-btn" data-tab="deals">Deals</button>
+                </div>
+
+                <div class="tab-content active" id="chat-tab">
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="assistant-message">
+                            <div class="message-content">
+                                <strong>Assistant:</strong> Hello! I'm your shopping and travel assistant. Browse any website, and I'll help you find deals, compare prices, and provide insights about products and destinations.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <input type="text" id="chat-input" placeholder="Ask me anything about this page...">
+                        <button id="send-btn">Send</button>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="insights-tab">
+                    <div class="insights-content">
+                        <h4>Page Insights</h4>
+                        <div id="insights-list">
+                            <p class="info-text">Browse to a shopping or travel site to get insights!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="deals-tab">
+                    <div class="deals-content">
+                        <h4>Deals & Coupons</h4>
+                        <div id="deals-list">
+                            <p class="info-text">I'll search for available deals when you visit shopping sites!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
